@@ -151,7 +151,10 @@ class MainActivity : AppCompatActivity(), Animator.AnimatorListener {
 			rotationX(360.0f)
 			scaleX(1.5f)
 			scaleY(1.5f)
+			translationX(200.0f)
+			alpha(0.5f)
 			interpolator = OvershootInterpolator()
+
 			start()
 		}
 	}
