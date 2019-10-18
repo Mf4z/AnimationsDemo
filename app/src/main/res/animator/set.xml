@@ -18,7 +18,7 @@
             android:valueFrom="1"
             android:valueTo="2.5"
             android:valueType="floatType"
-            android:interpolator="@android:anim/bounce_interpolator"/>
+            android:interpolator="@android:anim/overshoot_interpolator"/>
 
         <objectAnimator
             android:duration="1000"
@@ -26,7 +26,7 @@
             android:valueFrom="1"
             android:valueTo="2.5"
             android:valueType="floatType"
-            android:interpolator="@android:anim/bounce_interpolator"/>
+            android:interpolator="@android:anim/overshoot_interpolator"/>
 
     </set>
 
