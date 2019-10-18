@@ -1,9 +1,9 @@
 package com.sriyank.animationsdemo
 
 import android.animation.*
+import android.graphics.Color.alpha
 import android.os.Bundle
 import android.view.View
-import android.view.ViewPropertyAnimator
 import android.view.animation.OvershootInterpolator
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -144,8 +144,7 @@ class MainActivity : AppCompatActivity(), Animator.AnimatorListener {
 	}
 
 	fun viewPropertyAnimator(view: View) {
-
-		val vpa : ViewPropertyAnimator = targetImage.animate()
+		val vpa = targetImage.animate()
 		vpa.apply {
 			duration = 1000
 			rotationX(360.0f)
@@ -154,7 +153,20 @@ class MainActivity : AppCompatActivity(), Animator.AnimatorListener {
 			translationX(200.0f)
 			alpha(0.5f)
 			interpolator = OvershootInterpolator()
+			start()
+		}
+	}
 
+	fun propertyValuesHolder(view: View) {
+
+		val rotX : PropertyValuesHolder = PropertyValuesHolder.ofFloat("rotationX",360f)
+		val scaX : PropertyValuesHolder = PropertyValuesHolder.ofFloat("scaleX",1.5f)
+		val scaY : PropertyValuesHolder = PropertyValuesHolder.ofFloat("scaleY",1.5f)
+
+		val objA : ObjectAnimator = ObjectAnimator.ofPropertyValuesHolder(targetImage,rotX,scaX,scaY)
+		objA.apply {
+			duration = 1000
+			interpolator = OvershootInterpolator()
 			start()
 		}
 	}
