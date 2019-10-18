@@ -3,6 +3,8 @@ package com.sriyank.animationsdemo
 import android.animation.*
 import android.os.Bundle
 import android.view.View
+import android.view.animation.BounceInterpolator
+import android.view.animation.OvershootInterpolator
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -125,9 +127,12 @@ class MainActivity : AppCompatActivity(), Animator.AnimatorListener {
 // Scale Animations
 		val scaleX = ObjectAnimator.ofFloat(targetImage, "scaleX", 1.0f, 1.5f)
 		scaleX.duration = 500
+		scaleX.interpolator = BounceInterpolator()
+		//scaleX.interpolator = OvershootInterpolator()
 
 		val scaleY = ObjectAnimator.ofFloat(targetImage, "scaleY", 1.0f, 1.5f)
 		scaleY.duration = 500
+		scaleX.interpolator = BounceInterpolator()
 
 		//rootSet.playSequentially(flip,childSet)
 		//childSet.playTogether(scaleX,scaleY)
