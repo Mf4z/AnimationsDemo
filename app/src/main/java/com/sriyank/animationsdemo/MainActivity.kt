@@ -9,7 +9,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var batteryAnimation : AnimationDrawable
+    lateinit var wifiAnimation : AnimationDrawable
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,17 +21,17 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
 
-        targetImage.setBackgroundResource(R.drawable.battery_animation_list)
-        batteryAnimation = targetImage.background as AnimationDrawable
-        batteryAnimation.start()
+        targetImage.setBackgroundResource(R.drawable.wifi_animation_list)
+        wifiAnimation = targetImage.background as AnimationDrawable
+        wifiAnimation.start()
     }
 
     // Button click event handler 
     fun startStopAnimation(view: View) {
 
-        if(batteryAnimation.isRunning)
-            batteryAnimation.stop()
+        if(wifiAnimation.isRunning)
+            wifiAnimation.stop()
         else
-            batteryAnimation.start()
+            wifiAnimation.start()
     }
 }
